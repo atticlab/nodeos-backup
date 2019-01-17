@@ -1,9 +1,9 @@
 #!/bin/bash
 DATE=`date "+%a"`
-DATADIR=$(cat backup_uni.conf | grep 'DATADIR' | awk -F "=" '{print $2}')
-BACKUPDIR=$(cat backup_uni.conf | grep 'BACKUPDIR' | awk -F "=" '{print $2}')
-NODEPORT=$(cat backup_uni.conf | grep 'NODEPORT' | awk -F "=" '{print $2}')
-NODEOSBINDIR=$(cat backup_uni.conf | grep 'NODEOSBINDIR' | awk -F "=" '{print $2}')
+DATADIR=$(cat backup.conf | grep 'DATADIR' | awk -F "=" '{print $2}')
+BACKUPDIR=$(cat backup.conf | grep 'BACKUPDIR' | awk -F "=" '{print $2}')
+NODEPORT=$(cat backup.conf | grep 'NODEPORT' | awk -F "=" '{print $2}')
+NODEOSBINDIR=$(cat backup.conf | grep 'NODEOSBINDIR' | awk -F "=" '{print $2}')
 if [ ! -d "$NODEOSBINDIR" ]; then
    echo Nodeos binary dir path not right. Please change it.
    exit 0
