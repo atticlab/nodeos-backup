@@ -1,6 +1,6 @@
 #!/bin/bash
 DATE=`date "+%a"`
-DATADIR=$(cat backup.conf | grep 'DATADIR' | awk -F "=" '{print $2}')
+DATADIR=$(cat backup.conf | grep 'DATADIR' | awk -F "=" '{print $2}')/${DATE}
 BACKUPDIR=$(cat backup.conf | grep 'BACKUPDIR' | awk -F "=" '{print $2}')
 NODEPORT=$(cat backup.conf | grep 'NODEPORT' | awk -F "=" '{print $2}')
 NODEOSBINDIR=$(cat backup.conf | grep 'NODEOSBINDIR' | awk -F "=" '{print $2}')
