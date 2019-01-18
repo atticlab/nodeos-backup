@@ -24,8 +24,9 @@ if [ -n "$NODEPID" ]; then
             sleep 1
         done
    echo -ne "\rNodeos Stopped.    \n"
-else
-   echo Port $NODEPORT not listen.
+elif [ "$1" != "--without-node" ]
+then
+   echo Port $NODEPORT not listen. If you run script but node is not started type ./backup.sh --without-node
    exit 0
 fi
 
