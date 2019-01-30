@@ -12,7 +12,7 @@ if [ ! -d "$DATADIR" ]; then
    echo Nodeos datadir path not right. Please change it.
    exit 0
 fi
-NODEPID=$(netstat -tlpn 2>/dev/null | grep "^$NODEPORT$" | awk -F "LISTEN" '{print $2}' | awk -F "/" '{print $1}' | sed 's/ //g')
+NODEPID=$(netstat -tlpn 2>/dev/null | grep -E "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b\:${NODEPORT} " | awk -F "LISTEN" '{print $2}' | awk -F "/" '{print $1}' | sed 's/ //g')
 if [ -n "$NODEPID" ]; then
    echo nodepid = $NODEPID
    kill $NODEPID
