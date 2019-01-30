@@ -38,7 +38,7 @@ if [ -d "$BACKUPDIR" ]; then
      ulimit -c unlimited
      ulimit -n 65535
      ulimit -s 64000
-     $NODEOSBINDIR/nodeos/nodeos --data-dir $DATADIR --config-dir $DATADIR "$@" > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid
+     $NODEOSBINDIR/nodeos/nodeos --data-dir $DATADIR --config-dir $DATADIR > $DATADIR/stdout.txt 2> $DATADIR/stderr.txt &  echo $! > $DATADIR/nodeos.pid
 else
    echo $BACKUPDIR is not created. Check your permissions.
    exit 0
